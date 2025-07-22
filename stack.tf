@@ -1,4 +1,4 @@
-resource "spacelift_stack" "spacelift-iac" {
+resource "spacelift_stack" "spacelift_iac" {
   name        = "spacelift-iac"
   description = "Manages this Spacelift organization and objects within"
   space_id    = "root"
@@ -16,7 +16,7 @@ resource "spacelift_stack" "spacelift-iac" {
   github_action_deploy             = false
 }
 
-resource "spacelift_stack" "aws-infra" {
+resource "spacelift_stack" "aws_infra" {
   name        = "aws-infra"
   description = "Manages the AWS account of aws@pratikthakare.com"
   space_id    = "root"
