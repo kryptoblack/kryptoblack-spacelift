@@ -8,3 +8,9 @@ resource "spacelift_aws_integration" "this" {
   generate_credentials_in_worker = false
 }
 
+resource "spacelift_aws_integration_attachment" "aws_infra" {
+  integration_id = spacelift_aws_integration.this.id
+  stack_id       = "aws-infra"
+  read           = true
+  write          = true
+}

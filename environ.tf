@@ -9,6 +9,7 @@ resource "spacelift_environment_variable" "aws_infra_bse" {
 resource "spacelift_environment_variable" "aws_account_id" {
   stack_id    = "spacelift-iac"
   name        = "TF_VAR_aws_account_id"
+  value       = var.aws_account_id
   write_only  = true
   description = "Holds the account id of the primary AWS account"
 }
