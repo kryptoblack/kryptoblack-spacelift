@@ -14,10 +14,3 @@ resource "spacelift_aws_integration_attachment" "aws_infra" {
   read           = true
   write          = true
 }
-
-resource "spacelift_aws_integration_attachment" "aws_journeyly" {
-  integration_id = spacelift_aws_integration.this.id
-  stack_id       = spacelift_stack.aws_journeyly.id
-  read           = true
-  write          = true
-}
