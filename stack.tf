@@ -33,3 +33,21 @@ resource "spacelift_stack" "aws_infra" {
   enable_sensitive_outputs_upload  = false
   github_action_deploy             = false
 }
+
+resource "spacelift_stack" "aws_journeyly" {
+  name        = "aws-journeyly"
+  description = "Manages journeyly infra"
+  space_id    = "root"
+
+  repository = "aws-infra"
+  branch     = "journeyly"
+
+  terraform_version            = "1.10.3"
+  terraform_workflow_tool      = "OPEN_TOFU"
+  terraform_smart_sanitization = true
+
+  administrative                   = false
+  enable_well_known_secret_masking = true
+  enable_sensitive_outputs_upload  = false
+  github_action_deploy             = false
+}
